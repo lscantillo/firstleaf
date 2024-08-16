@@ -1,0 +1,578 @@
+  [1m[35m (120.1ms)[0m  [1m[35mCREATE DATABASE "firstleaf_development" ENCODING = 'unicode'[0m
+  [1m[35m (160.3ms)[0m  [1m[35mCREATE DATABASE "firstleaf_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4896425634391154220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-08-16 20:00:30.610303', '2024-08-16 20:00:30.610305') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4896425634391154220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.167.1 at 2024-08-16 20:00:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 351)
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 6180)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "firstleaf_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "firstleaf_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4896425634391154220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20240816200646)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4896425634391154220)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "firstleaf_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "firstleaf_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4896425634391154220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20240816200646)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "phone_number" character varying, "full_name" character varying, "password_digest" character varying, "key" character varying, "account_key" character varying, "metadata" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240816200646') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4896425634391154220)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/users" for 192.168.167.1 at 2024-08-16 20:14:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 92ms (Views: 15.4ms | ActiveRecord: 18.7ms | Allocations: 14243)
+
+
+Started GET "/favicon.ico" for 192.168.167.1 at 2024-08-16 20:14:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:32:23 +0000
+Processing by Api::UsersController#create as */*
+Completed 400 Bad Request in 8ms (ActiveRecord: 0.0ms | Allocations: 1585)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/users_controller.rb:30:in `user_params'
+app/controllers/api/users_controller.rb:16:in `create'
+Started GET "/api/users" for 192.168.167.1 at 2024-08-16 20:32:38 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 127ms (Views: 5.1ms | ActiveRecord: 26.8ms | Allocations: 4436)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:34:42 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis1@email.com", "phone_number"=>"32355", "full_name"=>"Jose 1", "password"=>"[FILTERED]", "metadata"=>"hola"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 150)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/users_controller.rb:30:in `user_params'
+app/controllers/api/users_controller.rb:16:in `create'
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:39:40 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis1@email.com", "phone_number"=>"32355", "full_name"=>"Jose 1", "password"=>"[FILTERED]", "metadata"=>"hola"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luis1@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32355"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "bb33db10f9172cfbed632216bcf7d96264a739d0"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Create (4.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "luis1@email.com"], ["phone_number", "32355"], ["full_name", "Jose 1"], ["password_digest", "[FILTERED]"], ["key", "bb33db10f9172cfbed632216bcf7d96264a739d0"], ["account_key", nil], ["metadata", "hola"], ["created_at", "2024-08-16 20:39:41.462419"], ["updated_at", "2024-08-16 20:39:41.462419"]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+DEPRECATION WARNING: `wait: :exponentially_longer` will actually wait polynomially longer and is therefore deprecated. Prefer `wait: :polynomially_longer` to avoid confusion and keep the same behavior. (called from <class:AccountKeyJob> at /app/app/jobs/account_key_job.rb:3)
+[ActiveJob] Enqueued AccountKeyJob (Job ID: 377c045d-db0e-466c-97ce-b5e172c662e1) to Sidekiq(default) with arguments: 1
+Completed 201 Created in 455ms (Views: 0.3ms | ActiveRecord: 28.7ms | Allocations: 33390)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:41:31 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis2@email.com", "phone_number"=>"32355", "full_name"=>"Jose 12", "password"=>"[FILTERED]", "metadata"=>"hola"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luis2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32355"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "dfd98308a3b5f43be6d6d0db42be69ce87f9a2d6"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 253ms (Views: 0.8ms | ActiveRecord: 7.5ms | Allocations: 5634)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:41:46 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis2@email.com", "phone_number"=>"32355333", "full_name"=>"Jose 12", "password"=>"[FILTERED]", "metadata"=>"hola"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luis2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32355333"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "045b944305b12204a6d9b1721225b8c64be16895"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 264ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 4773)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:42:41 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis2@email.com", "phone_number"=>"32355333", "full_name"=>"Jose 123", "password"=>"[FILTERED]", "metadata"=>"hola, afe3"}
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (6.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luis2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32355333"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "b2b2609951c89f523be612056ce8f36556a41adb"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 254ms (Views: 0.8ms | ActiveRecord: 8.9ms | Allocations: 4758)
+
+
+Started GET "/api/users" for 192.168.167.1 at 2024-08-16 20:43:01 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 23ms (Views: 11.7ms | ActiveRecord: 5.5ms | Allocations: 1038)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/users" for 192.168.167.1 at 2024-08-16 20:49:50 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (59.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 74ms (Views: -16.0ms | ActiveRecord: 84.0ms | Allocations: 3808)
+
+
+Started GET "/sidekiq" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/stylesheets/application.css" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/chartjs-plugin-annotation.min.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/stylesheets/application-dark.css" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/chart.min.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/application.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/base-charts.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/dashboard-charts.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/images/status.png" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/dashboard.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/chartjs-plugin-annotation.min.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/dashboard-charts.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/base-charts.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/images/favicon.ico" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/application.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/chart.min.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/javascripts/dashboard.js" for 192.168.167.1 at 2024-08-16 20:52:57 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 20:53:02 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 20:53:07 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 20:53:07 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 20:54:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/sidekiq/retries/all/delete" for 192.168.167.1 at 2024-08-16 20:54:08 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 20:54:08 +0000
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:54:17 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis2@email.com", "phone_number"=>"32355333", "full_name"=>"Jose 123", "password"=>"[FILTERED]", "metadata"=>"hola, afe3"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luis2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32355333"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "58ffacc88933b6433f5f2b7782b6a032d8c82f31"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+Completed 422 Unprocessable Entity in 343ms (Views: 4.5ms | ActiveRecord: 31.1ms | Allocations: 28210)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:55:06 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"luis2@email.com", "phone_number"=>"32355333", "full_name"=>"Jose 123", "password"=>"[FILTERED]", "metadata"=>"hola, afe3"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "luis2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32355333"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "241bd2c023a4457d51a6f8ce0d5524967b6c788b"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "luis2@email.com"], ["phone_number", "32355333"], ["full_name", "Jose 123"], ["password_digest", "[FILTERED]"], ["key", "241bd2c023a4457d51a6f8ce0d5524967b6c788b"], ["account_key", nil], ["metadata", "hola, afe3"], ["created_at", "2024-08-16 20:55:06.652736"], ["updated_at", "2024-08-16 20:55:06.652736"]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+DEPRECATION WARNING: `wait: :exponentially_longer` will actually wait polynomially longer and is therefore deprecated. Prefer `wait: :polynomially_longer` to avoid confusion and keep the same behavior. (called from <class:AccountKeyJob> at /app/app/jobs/account_key_job.rb:3)
+[ActiveJob] Enqueued AccountKeyJob (Job ID: e9aa7546-f2ac-456a-b533-5ba34d9fbf42) to Sidekiq(default) with arguments: 2
+Completed 201 Created in 265ms (Views: 0.2ms | ActiveRecord: 15.2ms | Allocations: 18463)
+
+
+Started GET "/api/users" for 192.168.167.1 at 2024-08-16 20:55:11 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 3.0ms | Allocations: 1276)
+
+
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 20:56:45 +0000
+Started GET "/api/users" for 192.168.167.1 at 2024-08-16 20:57:55 +0000
+Processing by Api::UsersController#index as */*
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 26ms (Views: 7.5ms | ActiveRecord: 4.1ms | Allocations: 904)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 20:59:16 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"richard@email.com", "phone_number"=>"3235533333", "full_name"=>"Richard", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "richard@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "3235533333"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "e6f03cd42e177ec21326f029b6ea304e8405cf19"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "richard@email.com"], ["phone_number", "3235533333"], ["full_name", "Richard"], ["password_digest", "[FILTERED]"], ["key", "e6f03cd42e177ec21326f029b6ea304e8405cf19"], ["account_key", nil], ["metadata", "hola, afe3 33"], ["created_at", "2024-08-16 20:59:17.268013"], ["updated_at", "2024-08-16 20:59:17.268013"]]
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:19:in `create'
+[ActiveJob] Enqueued AccountKeyJob (Job ID: d20c70cf-f76c-4113-9e5c-b9179bd6ba48) to Sidekiq(default) with arguments: 3
+Completed 201 Created in 277ms (Views: 0.6ms | ActiveRecord: 11.2ms | Allocations: 4832)
+
+
+Started GET "/api/users?email&full_name&metadata" for 192.168.167.1 at 2024-08-16 20:59:22 +0000
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>nil, "metadata"=>nil}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 1.3ms | Allocations: 972)
+
+
+Started GET "/api/users?email&full_name=Ri&metadata" for 192.168.167.1 at 2024-08-16 20:59:30 +0000
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>"Ri", "metadata"=>nil}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (full_name LIKE '%Ri%') ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:11:in `index'
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 4.3ms | Allocations: 910)
+
+
+Started GET "/api/users?email&full_name=Ri&metadata" for 192.168.167.1 at 2024-08-16 21:02:21 +0000
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>"Ri", "metadata"=>nil}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (full_name LIKE '%Ri%') ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:7:in `index'
+Completed 200 OK in 19ms (Views: 6.3ms | ActiveRecord: 5.0ms | Allocations: 7116)
+
+
+Started GET "/api/users?email&full_name=Ri&metadata&cellphone" for 192.168.167.1 at 2024-08-16 21:02:33 +0000
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>"Ri", "metadata"=>nil, "cellphone"=>nil}
+Filter chain halted as :validate_query_params rendered or redirected
+Completed 422 Unprocessable Entity in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 116)
+
+
+Started GET "/sidekiq/retries/1723841802.8586562-7574178d968b2ac829080179" for 192.168.167.1 at 2024-08-16 21:03:28 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:03:28 +0000
+Started GET "/sidekiq/retries/1723842467.333495-b76a0ae284d8ad49b9327ebe" for 192.168.167.1 at 2024-08-16 21:03:31 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:05:44 +0000
+Started POST "/sidekiq/retries/all/delete" for 192.168.167.1 at 2024-08-16 21:05:47 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:05:47 +0000
+Started GET "/sidekiq/" for 192.168.167.1 at 2024-08-16 21:05:51 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:05:51 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:05:56 +0000
+Started GET "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:05:58 +0000
+Started POST "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:06:06 +0000
+Started GET "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:06:06 +0000
+Started POST "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:06:12 +0000
+Started GET "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:06:12 +0000
+Started GET "/sidekiq/morgue" for 192.168.167.1 at 2024-08-16 21:06:15 +0000
+Started GET "/sidekiq/scheduled" for 192.168.167.1 at 2024-08-16 21:06:16 +0000
+Started GET "/sidekiq/morgue" for 192.168.167.1 at 2024-08-16 21:06:17 +0000
+Started GET "/sidekiq/morgue" for 192.168.167.1 at 2024-08-16 21:06:17 +0000
+Started GET "/sidekiq/scheduled" for 192.168.167.1 at 2024-08-16 21:06:19 +0000
+Started GET "/sidekiq/metrics" for 192.168.167.1 at 2024-08-16 21:06:19 +0000
+Started GET "/sidekiq/javascripts/metrics.js" for 192.168.167.1 at 2024-08-16 21:06:19 +0000
+Started GET "/sidekiq/javascripts/metrics.js" for 192.168.167.1 at 2024-08-16 21:06:19 +0000
+Started GET "/sidekiq/morgue" for 192.168.167.1 at 2024-08-16 21:06:20 +0000
+Started GET "/sidekiq/scheduled" for 192.168.167.1 at 2024-08-16 21:06:21 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:06:22 +0000
+Started GET "/sidekiq/queues" for 192.168.167.1 at 2024-08-16 21:06:23 +0000
+Started GET "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:06:23 +0000
+Started GET "/sidekiq/" for 192.168.167.1 at 2024-08-16 21:06:24 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:25 +0000
+Started GET "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:06:26 +0000
+Started GET "/sidekiq/" for 192.168.167.1 at 2024-08-16 21:06:27 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:27 +0000
+Started GET "/sidekiq/" for 192.168.167.1 at 2024-08-16 21:06:29 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:29 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:34 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:49 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:54 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:06:59 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:04 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:09 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:14 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:19 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:24 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:29 +0000
+Started GET "/api/users?email&full_name=Ri&metadata" for 192.168.167.1 at 2024-08-16 21:07:51 +0000
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>"Ri", "metadata"=>nil}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (full_name LIKE '%Ri%') ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:7:in `index'
+Completed 200 OK in 118ms (Views: 68.6ms | ActiveRecord: 13.9ms | Allocations: 22486)
+
+
+Started GET "/api/users?email&full_name=&metadata" for 192.168.167.1 at 2024-08-16 21:07:58 +0000
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>"", "metadata"=>nil}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 1.0ms | Allocations: 1107)
+
+
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:07:59 +0000
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 21:08:17 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"john@email.com", "phone_number"=>"323776", "full_name"=>"John", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (7.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "323776"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "acedc8a8ac9c60a6aee2e1a90ba9ef5cdff97322"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "john@email.com"], ["phone_number", "323776"], ["full_name", "John"], ["password_digest", "[FILTERED]"], ["key", "acedc8a8ac9c60a6aee2e1a90ba9ef5cdff97322"], ["account_key", nil], ["metadata", "hola, afe3 33"], ["created_at", "2024-08-16 21:08:17.759872"], ["updated_at", "2024-08-16 21:08:17.759872"]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 308ms (ActiveRecord: 14.5ms | Allocations: 12500)
+
+
+  
+ArgumentError (Sidekiq::Job cannot be included in an ActiveJob: AccountKeyJob):
+  
+app/jobs/account_key_job.rb:2:in `include'
+app/jobs/account_key_job.rb:2:in `<class:AccountKeyJob>'
+app/jobs/account_key_job.rb:1:in `<main>'
+app/controllers/api/users_controller.rb:16:in `create'
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:08:46 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:08:49 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:08:54 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:08:59 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:04 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:09 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:14 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:19 +0000
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 21:09:23 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"john@email.com", "phone_number"=>"323776", "full_name"=>"John", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "323776"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "b57713e00938700497f7ea2d2683c10ade8d990c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+Completed 422 Unprocessable Entity in 262ms (Views: 2.5ms | ActiveRecord: 7.1ms | Allocations: 11906)
+
+
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:24 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:29 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:34 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:39 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:44 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:49 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:54 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:09:59 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:04 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:09 +0000
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 21:10:11 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"john2@email.com", "phone_number"=>"3237764", "full_name"=>"John 2", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (5.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "3237764"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "69547e5b612295e57265b6276b597df79523c1f2"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "john2@email.com"], ["phone_number", "3237764"], ["full_name", "John 2"], ["password_digest", "[FILTERED]"], ["key", "69547e5b612295e57265b6276b597df79523c1f2"], ["account_key", nil], ["metadata", "hola, afe3 33"], ["created_at", "2024-08-16 21:10:12.011393"], ["updated_at", "2024-08-16 21:10:12.011393"]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 10.7ms | Allocations: 7161)
+
+
+  
+NoMethodError (undefined method `retry_on' for AccountKeyJob:Class):
+  
+app/jobs/account_key_job.rb:5:in `<class:AccountKeyJob>'
+app/jobs/account_key_job.rb:1:in `<main>'
+app/controllers/api/users_controller.rb:16:in `create'
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:14 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:19 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:24 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:29 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:34 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:39 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:44 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:49 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:10:58 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:11:59 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:12:59 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:13:59 +0000
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 21:14:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"john2@email.co3", "phone_number"=>"3237764444444444444444444444", "full_name"=>"John 2", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (4.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john2@email.co3"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "3237764444444444444444444444"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "1958f2500730116629717eb0f8d85d761422b618"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+Completed 422 Unprocessable Entity in 302ms (Views: 1.9ms | ActiveRecord: 15.4ms | Allocations: 27520)
+
+
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:14:59 +0000
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 21:15:09 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"john2@email.co3", "phone_number"=>"32377644444", "full_name"=>"John 2", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john2@email.co3"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32377644444"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "john2@email.co3"], ["phone_number", "32377644444"], ["full_name", "John 2"], ["password_digest", "[FILTERED]"], ["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["account_key", nil], ["metadata", "hola, afe3 33"], ["created_at", "2024-08-16 21:15:10.071791"], ["updated_at", "2024-08-16 21:15:10.071791"]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+Completed 201 Created in 284ms (Views: 0.4ms | ActiveRecord: 11.8ms | Allocations: 5787)
+
+
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:15:12 +0000
+Started GET "/sidekiq/stats" for 192.168.167.1 at 2024-08-16 21:15:14 +0000
+Started GET "/sidekiq/busy" for 192.168.167.1 at 2024-08-16 21:15:16 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:15:22 +0000
+Started GET "/sidekiq/retries/1723842933.2748163-5f3f6eb725e63b77c5fe99fd" for 192.168.167.1 at 2024-08-16 21:15:24 +0000
+Started POST "/sidekiq/retries/1723842933.2748163-5f3f6eb725e63b77c5fe99fd" for 192.168.167.1 at 2024-08-16 21:16:01 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:16:01 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:16:16 +0000
+Started POST "/sidekiq/retries/all/delete" for 192.168.167.1 at 2024-08-16 21:16:23 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:16:23 +0000
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:27:21 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "john2@email.co3"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "32377644444"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["account_key", "45439c1d47d5db9df64700fd8b45c8e830e445a69db0ca1ccb756fc1807c4e04"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "john2@email.co3"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "32377644444"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["account_key", "45439c1d47d5db9df64700fd8b45c8e830e445a69db0ca1ccb756fc1807c4e04"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "john2@email.co3"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "32377644444"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["account_key", "45439c1d47d5db9df64700fd8b45c8e830e445a69db0ca1ccb756fc1807c4e04"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (8.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "john2@email.co3"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "32377644444"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["account_key", "45439c1d47d5db9df64700fd8b45c8e830e445a69db0ca1ccb756fc1807c4e04"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "john2@email.co3"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "32377644444"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["key", "4f5b1943936bce17aedc453c36c6be2e2c563873"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."account_key" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["account_key", "45439c1d47d5db9df64700fd8b45c8e830e445a69db0ca1ccb756fc1807c4e04"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Update (4.8ms)[0m  [1m[33mUPDATE "users" SET "account_key" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["account_key", "45439c1d47d5db9df64700fd8b45c8e830e445a69db0ca1ccb756fc1807c4e04"], ["updated_at", "2024-08-16 21:42:18.541946"], ["id", 6]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/users?email&full_name=&metadata" for 192.168.167.1 at 2024-08-16 21:42:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as */*
+  Parameters: {"email"=>nil, "full_name"=>"", "metadata"=>nil}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/controllers/api/users_controller.rb:7:in `index'
+Completed 200 OK in 35ms (Views: 8.0ms | ActiveRecord: 8.5ms | Allocations: 22738)
+
+
+Started POST "/api/users" for 192.168.167.1 at 2024-08-16 21:59:36 +0000
+Processing by Api::UsersController#create as */*
+  Parameters: {"email"=>"step@email.co3", "phone_number"=>"32377644444111", "full_name"=>"Estef", "password"=>"[FILTERED]", "metadata"=>"hola, afe3 33"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "step@email.co3"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "32377644444111"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."key" = $1 LIMIT $2[0m  [["key", "e9c17cc08f6779a7bb868350de0c71639fe7f889"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "phone_number", "full_name", "password_digest", "key", "account_key", "metadata", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "step@email.co3"], ["phone_number", "32377644444111"], ["full_name", "Estef"], ["password_digest", "[FILTERED]"], ["key", "e9c17cc08f6779a7bb868350de0c71639fe7f889"], ["account_key", nil], ["metadata", "hola, afe3 33"], ["created_at", "2024-08-16 21:59:36.526643"], ["updated_at", "2024-08-16 21:59:36.526643"]]
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:15:in `create'
+Completed 201 Created in 282ms (Views: 0.2ms | ActiveRecord: 17.7ms | Allocations: 15892)
+
+
+Started GET "/sidekiq/retries" for 192.168.167.1 at 2024-08-16 21:59:40 +0000
+Started GET "/sidekiq/morgue" for 192.168.167.1 at 2024-08-16 22:00:02 +0000
